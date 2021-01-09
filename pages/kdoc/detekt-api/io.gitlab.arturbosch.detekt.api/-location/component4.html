@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" build fail thresholds">
-<title>Configure Build Failure Thresholds | A static code analyzer for Kotlin</title>
+<meta name="keywords" content=" ">
+<title>component4 - | A static code analyzer for Kotlin</title>
 <link rel="stylesheet" href="/detekt/css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -148,7 +148,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/detekt/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Configure Build Failure Thresholds">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="component4 -">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -205,7 +205,7 @@
           
           
           
-          <li><a href="/detekt/configurations.html">detekt Configuration File</a></li>
+          <li><a href="/detekt/configurations.html">Configuration File</a></li>
           
           
           
@@ -220,13 +220,6 @@
           
           
           <li><a href="/detekt/baseline.html">Suppressing Issues via Baseline File</a></li>
-          
-          
-          
-          
-          
-          
-          <li class="active"><a href="/detekt/failonbuild.html">Configure Build Failure Thresholds</a></li>
           
           
           
@@ -406,7 +399,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Configure Build Failure Thresholds</h1>
+   <h1 class="post-title-main">component4 -</h1>
 </div>
 
 
@@ -443,30 +436,19 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages//failonbuild.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages//pages/kdoc/detekt-api/io.gitlab.arturbosch.detekt.api/-location/component4.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
 
     
 
-  <p><em>detekt</em> supports the option to fail your build if a threshold of code smell issues is met.</p>
+  <p>//<a href="/detekt/pages/kdoc/detekt-api/">detekt-api</a>/<a href="/detekt/pages/kdoc/detekt-api/io.gitlab.arturbosch.detekt.api/">io.gitlab.arturbosch.detekt.api</a>/<a href="/detekt/pages/kdoc/detekt-api/io.gitlab.arturbosch.detekt.api/-location/">Location</a>/<a href="/detekt/pages/kdoc/detekt-api/io.gitlab.arturbosch.detekt.api/-location/component4.html">component4</a></p>
 
-<p>For this the following code must be inside the detekt config:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">build</span><span class="pi">:</span>
-  <span class="na">maxIssues</span><span class="pi">:</span> <span class="m">10</span> <span class="c1"># break the build if ten weighted issues are found</span>
-  <span class="na">weights</span><span class="pi">:</span>
-    <span class="na">complexity</span><span class="pi">:</span> <span class="m">2</span> <span class="c1"># every rule of the complexity rule set should count as if two issues were found...</span>
-    <span class="na">LongParameterList</span><span class="pi">:</span> <span class="m">1</span> <span class="c1"># ...with the exception of the LongParameterList rule.</span>
-    <span class="na">comments</span><span class="pi">:</span> <span class="m">0</span> <span class="c1"># comment rules are just a nice to know?!</span>
-</code></pre></div></div>
-
-<p>Every rule and rule set can be attached with an integer value which is the weight of the finding.
-For example: If you have 5 findings of the category <em>complexity</em>, then your failThreshold of 10 is reached as
-5 x 2 = 10.</p>
-
-<p>The formula for weights is: RuleID &gt; RuleSetID &gt; 1.</p>
+<h1 id="component4">component4</h1>
+<p>[jvm]<br />
+Content<br />
+operator fun <a href="/detekt/pages/kdoc/detekt-api/io.gitlab.arturbosch.detekt.api/-location/component4.html">component4</a>(): FilePath</p>
 
 
 
@@ -484,8 +466,8 @@ For example: If you have 5 findings of the category <em>complexity</em>, then yo
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2020 The detekt Team. All rights reserved. <br />
- Site last generated: Dec 7, 2020 <br />
+               &copy;2021 The detekt Team. All rights reserved. <br />
+ Site last generated: Jan 9, 2021 <br />
                 </div>
             </div>
 </footer>
