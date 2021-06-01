@@ -32,7 +32,7 @@
 <script src="/detekt/js/toc.js"></script>
 <script src="/detekt/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/detekt/images/favicon.ico">
+<link rel="shortcut icon" href="/detekt/images/favicon.svg">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -245,6 +245,13 @@
           
           
           
+          
+          
+          <li><a href="/detekt/compatibility.html">Compatibility Table</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -386,7 +393,7 @@
           
           
           
-          <li><a href="/detekt/pages/kdoc/detekt-api/index.html">detekt-api</a></li>
+          <li><a href="/detekt/pages/kdoc">detekt-api</a></li>
           
           
           
@@ -450,7 +457,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages/documentation/formatting.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/main/docs/pages/documentation/formatting.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -470,35 +477,66 @@ in the command line interface.</p>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: No</p>
+
 <h3 id="annotationspacing">AnnotationSpacing</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <h3 id="argumentlistwrapping">ArgumentListWrapping</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: No</p>
+
+<h4 id="configuration-options">Configuration options:</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">indentSize</code> (default: <code class="language-plaintext highlighter-rouge">4</code>)</p>
+
+    <p>indentation size</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">maxLineLength</code> (default: <code class="language-plaintext highlighter-rouge">120</code>)</p>
+
+    <p>maximum line length</p>
+  </li>
+</ul>
+
 <h3 id="chainwrapping">ChainWrapping</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="commentspacing">CommentSpacing</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="enumentrynamecase">EnumEntryNameCase</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <h3 id="filename">Filename</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="finalnewline">FinalNewline</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
-<h4 id="configuration-options">Configuration options:</h4>
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
+<h4 id="configuration-options-1">Configuration options:</h4>
 
 <ul>
   <li>
@@ -512,15 +550,18 @@ in the command line interface.</p>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
-<p>For defining custom import layout patterns see: https://github.com/pinterest/ktlint/blob/cdf871b6f015359f9a6f02e15ef1b85a6c442437/ktlint-ruleset-standard/src/main/kotlin/com/pinterest/ktlint/ruleset/standard/ImportOrderingRule.kt</p>
+<p>For defining import layout patterns see:
+https://github.com/pinterest/ktlint/blob/a6ca5b2edf95cc70a138a9470cfb6c4fd5d9d3ce/ktlint-ruleset-standard/src/main/kotlin/com/pinterest/ktlint/ruleset/standard/ImportOrderingRule.kt</p>
 
-<h4 id="configuration-options-1">Configuration options:</h4>
+<p><strong>Active by default</strong>: No</p>
+
+<h4 id="configuration-options-2">Configuration options:</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">layout</code> (default: <code class="language-plaintext highlighter-rouge">'idea'</code>)</p>
+    <p><code class="language-plaintext highlighter-rouge">layout</code> (default: <code class="language-plaintext highlighter-rouge">'*,java.**,javax.**,kotlin.**,^'</code>)</p>
 
-    <p>the import ordering layout; use ‘ascii’, ‘idea’ or define a custom one</p>
+    <p>the import ordering layout;</p>
   </li>
 </ul>
 
@@ -528,7 +569,9 @@ in the command line interface.</p>
 
 <p>See <a href="https://ktlint.github.io/#rule-indentation">ktlint-website</a> for documentation.</p>
 
-<h4 id="configuration-options-2">Configuration options:</h4>
+<p><strong>Active by default</strong>: No</p>
+
+<h4 id="configuration-options-3">Configuration options:</h4>
 
 <ul>
   <li>
@@ -547,7 +590,9 @@ in the command line interface.</p>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
-<h4 id="configuration-options-3">Configuration options:</h4>
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
+<h4 id="configuration-options-4">Configuration options:</h4>
 
 <ul>
   <li>
@@ -555,73 +600,110 @@ in the command line interface.</p>
 
     <p>maximum line length</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ignoreBackTickedIdentifier</code> (default: <code class="language-plaintext highlighter-rouge">false</code>)</p>
+
+    <p>ignore back ticked identifier</p>
+  </li>
 </ul>
 
 <h3 id="modifierordering">ModifierOrdering</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-modifier-order">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="multilineifelse">MultiLineIfElse</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-modifier-order">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="noblanklinebeforerbrace">NoBlankLineBeforeRbrace</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="noconsecutiveblanklines">NoConsecutiveBlankLines</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-blank">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="noemptyclassbody">NoEmptyClassBody</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-empty-class-body">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="noemptyfirstlineinmethodblock">NoEmptyFirstLineInMethodBlock</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <h3 id="nolinebreakafterelse">NoLineBreakAfterElse</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="nolinebreakbeforeassignment">NoLineBreakBeforeAssignment</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="nomultiplespaces">NoMultipleSpaces</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="nosemicolons">NoSemicolons</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-semi">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="notrailingspaces">NoTrailingSpaces</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-trailing-whitespaces">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="nounitreturn">NoUnitReturn</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-unit-return">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="nounusedimports">NoUnusedImports</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="nowildcardimports">NoWildcardImports</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-import">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="packagename">PackageName</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="parameterlistwrapping">ParameterListWrapping</h3>
 
 <p>See <a href="https://ktlint.github.io">ktlint-website</a> for documentation.</p>
 
-<h4 id="configuration-options-4">Configuration options:</h4>
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
+<h4 id="configuration-options-5">Configuration options:</h4>
 
 <ul>
   <li>
@@ -629,63 +711,96 @@ in the command line interface.</p>
 
     <p>indentation size</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">maxLineLength</code> (default: <code class="language-plaintext highlighter-rouge">120</code>)</p>
+
+    <p>maximum line length</p>
+  </li>
 </ul>
 
 <h3 id="spacingaroundanglebrackets">SpacingAroundAngleBrackets</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: No</p>
+
 <h3 id="spacingaroundcolon">SpacingAroundColon</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="spacingaroundcomma">SpacingAroundComma</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="spacingaroundcurly">SpacingAroundCurly</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="spacingarounddot">SpacingAroundDot</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="spacingarounddoublecolon">SpacingAroundDoubleColon</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <h3 id="spacingaroundkeyword">SpacingAroundKeyword</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="spacingaroundoperators">SpacingAroundOperators</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="spacingaroundparens">SpacingAroundParens</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <h3 id="spacingaroundrangeoperator">SpacingAroundRangeOperator</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <h3 id="spacingaroundunaryoperator">SpacingAroundUnaryOperator</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: No</p>
+
 <h3 id="spacingbetweendeclarationswithannotations">SpacingBetweenDeclarationsWithAnnotations</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <h3 id="spacingbetweendeclarationswithcomments">SpacingBetweenDeclarationsWithComments</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-spacing">ktlint-website</a> for documentation.</p>
 
+<p><strong>Active by default</strong>: No</p>
+
 <h3 id="stringtemplate">StringTemplate</h3>
 
 <p>See <a href="https://ktlint.github.io/#rule-string-template">ktlint-website</a> for documentation.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 
     <div class="tags">

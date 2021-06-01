@@ -32,7 +32,7 @@
 <script src="/detekt/js/toc.js"></script>
 <script src="/detekt/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/detekt/images/favicon.ico">
+<link rel="shortcut icon" href="/detekt/images/favicon.svg">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -245,6 +245,13 @@
           
           
           
+          
+          
+          <li><a href="/detekt/compatibility.html">Compatibility Table</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -386,7 +393,7 @@
           
           
           
-          <li><a href="/detekt/pages/kdoc/detekt-api/index.html">detekt-api</a></li>
+          <li><a href="/detekt/pages/kdoc">detekt-api</a></li>
           
           
           
@@ -450,7 +457,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages//configurations.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/main/docs/pages//configurations.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -467,7 +474,7 @@ $('#toc').on('click', 'a', function() {
   <li>processors</li>
 </ul>
 
-<p>See the <a href="https://github.com/detekt/detekt/blob/master/detekt-core/src/main/resources/default-detekt-config.yml">default-detekt-config.yml</a>
+<p>See the <a href="https://github.com/detekt/detekt/blob/main/detekt-core/src/main/resources/default-detekt-config.yml">default-detekt-config.yml</a>
 file for all defined configuration options and their default values.</p>
 
 <p><em>Note:</em> When using a custom config file, the default values are ignored unless you also set the <code class="language-plaintext highlighter-rouge">--build-upon-default-config</code> flag.</p>
@@ -475,11 +482,11 @@ file for all defined configuration options and their default values.</p>
 <h2 id="rule-sets-and-rules">Rule sets and rules</h2>
 
 <p><em>detekt</em> allows easily to just pick the rules you want and configure them the way you like.
-For example if you want to allow up to 20 functions inside a Kotlin file instead of the default threshold of 10, write:</p>
+For example if you want to allow up to 20 functions inside a Kotlin file instead of the default threshold, write:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">complexity</span><span class="pi">:</span>
   <span class="na">TooManyFunctions</span><span class="pi">:</span>
-    <span class="na">threshold</span><span class="pi">:</span> <span class="m">20</span>
+    <span class="na">thresholdInFiles</span><span class="pi">:</span> <span class="m">20</span>
 </code></pre></div></div>
 
 <p>To read about all supported rule sets and rules, use the side navigation <code class="language-plaintext highlighter-rouge">Rule Sets</code>.</p>

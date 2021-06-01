@@ -32,7 +32,7 @@
 <script src="/detekt/js/toc.js"></script>
 <script src="/detekt/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/detekt/images/favicon.ico">
+<link rel="shortcut icon" href="/detekt/images/favicon.svg">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -245,6 +245,13 @@
           
           
           
+          
+          
+          <li><a href="/detekt/compatibility.html">Compatibility Table</a></li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -386,7 +393,7 @@
           
           
           
-          <li><a href="/detekt/pages/kdoc/detekt-api/index.html">detekt-api</a></li>
+          <li><a href="/detekt/pages/kdoc">detekt-api</a></li>
           
           
           
@@ -450,7 +457,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages/documentation/exceptions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/main/docs/pages/documentation/exceptions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -466,13 +473,15 @@ an exception it will be reported. By default this rule is checking for <code cla
 <code class="language-plaintext highlighter-rouge">finalize</code>. This rule is configurable via the <code class="language-plaintext highlighter-rouge">methodNames</code> configuration to change the list of functions which
 should not throw any exceptions.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
+
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options">Configuration options:</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">methodNames</code> (default: <code class="language-plaintext highlighter-rouge">[toString, hashCode, equals, finalize]</code>)</p>
+    <p><code class="language-plaintext highlighter-rouge">methodNames</code> (default: <code class="language-plaintext highlighter-rouge">['toString', 'hashCode', 'equals', 'finalize']</code>)</p>
 
     <p>methods which should not throw exceptions</p>
   </li>
@@ -493,6 +502,8 @@ should not throw any exceptions.</p>
 <p>This rule reports <code class="language-plaintext highlighter-rouge">catch</code> blocks which check for the type of an exception via <code class="language-plaintext highlighter-rouge">is</code> checks or casts.
 Instead of catching generic exception types and then checking for specific exception types the code should
 use multiple catch blocks. These catch blocks should then catch the specific exceptions.</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -515,6 +526,7 @@ use multiple catch blocks. These catch blocks should then catch the specific exc
     <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="nc">MyException</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="nc">IOException</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="notimplementeddeclaration">NotImplementedDeclaration</h3>
@@ -523,6 +535,8 @@ use multiple catch blocks. These catch blocks should then catch the specific exc
 functions.
 These indicate that functionality is still under development and will not work properly. Both of these should only
 serve as temporary declarations and should not be put into production environments.</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -546,6 +560,8 @@ should be avoided.</p>
 
 <p>See https://kotlinlang.org/docs/reference/object-declarations.html#object-declarations
 See https://kotlinlang.org/docs/reference/object-declarations.html#companion-objects</p>
+
+<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Requires Type Resolution</strong></p>
 
@@ -573,6 +589,8 @@ See https://kotlinlang.org/docs/reference/object-declarations.html#companion-obj
 
 <p>This rule reports code that tries to print the stacktrace of an exception. Instead of simply printing a stacktrace
 a better logging solution should be used.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -608,6 +626,8 @@ a better logging solution should be used.</p>
 
 <p>This rule reports all exceptions that are caught and then later re-thrown without modification.
 It ignores caught exceptions that are rethrown if there is work done before that.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
 
 <p><strong>Debt</strong>: 5min</p>
 
@@ -651,6 +671,8 @@ It ignores caught exceptions that are rethrown if there is work done before that
 Using <code class="language-plaintext highlighter-rouge">return</code> statements in <code class="language-plaintext highlighter-rouge">finally</code> blocks can discard and hide exceptions that are thrown in the <code class="language-plaintext highlighter-rouge">try</code> block.
 Furthermore, this rule reports values from <code class="language-plaintext highlighter-rouge">finally</code> blocks, if the corresponding <code class="language-plaintext highlighter-rouge">try</code> is used as an expression.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
+
 <p><strong>Requires Type Resolution</strong></p>
 
 <p><strong>Debt</strong>: 20min</p>
@@ -688,13 +710,15 @@ These by default configured exception types are part of Java.
 Therefore, Kotlin developers have to handle them by using the catch clause.
 For that reason, this rule ignores that these configured exception types are caught.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
+
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options-2">Configuration options:</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ignoredExceptionTypes</code> (default: <code class="language-plaintext highlighter-rouge">InterruptedException, NumberFormatException, ParseException, MalformedURLException</code>)</p>
+    <p><code class="language-plaintext highlighter-rouge">ignoredExceptionTypes</code> (default: <code class="language-plaintext highlighter-rouge">['NumberFormatException', 'InterruptedException', 'ParseException', 'MalformedURLException']</code>)</p>
 
     <p>exception types which should be ignored (both in the catch clause and body)</p>
   </li>
@@ -747,6 +771,8 @@ For that reason, this rule ignores that these configured exception types are cau
 <p>This rule reports all cases where exceptions are thrown from a <code class="language-plaintext highlighter-rouge">finally</code> block. Throwing exceptions from a <code class="language-plaintext highlighter-rouge">finally</code>
 block should be avoided as it can lead to confusion and discarded exceptions.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
+
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="noncompliant-code-8">Noncompliant Code:</h4>
@@ -765,6 +791,8 @@ block should be avoided as it can lead to confusion and discarded exceptions.</p
 <p>This rule reports all exceptions that are thrown in a <code class="language-plaintext highlighter-rouge">main</code> method.
 An exception should only be thrown if it can be handled by a “higher” function.</p>
 
+<p><strong>Active by default</strong>: No</p>
+
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="noncompliant-code-9">Noncompliant Code:</h4>
@@ -782,13 +810,15 @@ Exceptions should always call one of the constructor overloads to provide a mess
 Exceptions should be meaningful and contain as much detail about the error case as possible. This will help to track
 down an underlying issue in a better way.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
+
 <p><strong>Debt</strong>: 5min</p>
 
 <h4 id="configuration-options-3">Configuration options:</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">exceptions</code> (default: <code class="language-plaintext highlighter-rouge">IllegalArgumentException, IllegalStateException, IOException</code>)</p>
+    <p><code class="language-plaintext highlighter-rouge">exceptions</code> (default: <code class="language-plaintext highlighter-rouge">['ArrayIndexOutOfBoundsException', 'Error', 'Exception', 'IllegalMonitorStateException', 'NullPointerException', 'IndexOutOfBoundsException', 'RuntimeException', 'Throwable']</code>)</p>
 
     <p>exceptions which should not be thrown without message or cause</p>
   </li>
@@ -818,6 +848,8 @@ down an underlying issue in a better way.</p>
 
 <p>Exceptions should not be wrapped inside the same exception type and then rethrown. Prefer wrapping exceptions in more
 meaningful exception types.</p>
+
+<p><strong>Active by default</strong>: Yes - Since v1.16.0</p>
 
 <p><strong>Debt</strong>: 5min</p>
 
@@ -849,13 +881,15 @@ meaningful exception types.</p>
 It should be preferred to catch specific exceptions to the case that is currently handled. If the scope of the caught
 exception is too broad it can lead to unintended exceptions being caught.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options-4">Configuration options:</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">exceptionNames</code> (default: <code class="language-plaintext highlighter-rouge">ArrayIndexOutOfBoundsException, Error, Exception, IllegalMonitorStateException, NullPointerException, IndexOutOfBoundsException, RuntimeException, Throwable</code>)</p>
+    <p><code class="language-plaintext highlighter-rouge">exceptionNames</code> (default: <code class="language-plaintext highlighter-rouge">['ArrayIndexOutOfBoundsException', 'Error', 'Exception', 'IllegalMonitorStateException', 'NullPointerException', 'IndexOutOfBoundsException', 'RuntimeException', 'Throwable']</code>)</p>
 
     <p>exceptions which are too generic and should not be caught</p>
   </li>
@@ -889,13 +923,15 @@ exception is too broad it can lead to unintended exceptions being caught.</p>
 <p>This rule reports thrown exceptions that have a type that is too generic. It should be preferred to throw specific
 exceptions to the case that has currently occurred.</p>
 
+<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
+
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options-5">Configuration options:</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">exceptionNames</code> (default: <code class="language-plaintext highlighter-rouge">Error, Exception, Throwable, RuntimeException</code>)</p>
+    <p><code class="language-plaintext highlighter-rouge">exceptionNames</code> (default: <code class="language-plaintext highlighter-rouge">['Error', 'Exception', 'Throwable', 'RuntimeException']</code>)</p>
 
     <p>exceptions which are too generic and should not be thrown</p>
   </li>
