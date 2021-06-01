@@ -32,7 +32,7 @@
 <script src="/detekt/js/toc.js"></script>
 <script src="/detekt/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/detekt/images/favicon.svg">
+<link rel="shortcut icon" href="/detekt/images/favicon.ico">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -245,13 +245,6 @@
           
           
           
-          
-          
-          <li><a href="/detekt/compatibility.html">Compatibility Table</a></li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -393,7 +386,7 @@
           
           
           
-          <li><a href="/detekt/pages/kdoc">detekt-api</a></li>
+          <li><a href="/detekt/pages/kdoc/detekt-api/index.html">detekt-api</a></li>
           
           
           
@@ -457,7 +450,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/main/docs/pages/documentation/complexity.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages/documentation/complexity.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -471,8 +464,6 @@ $('#toc').on('click', 'a', function() {
 <p>Complex conditions make it hard to understand which cases lead to the condition being true or false. To improve
 readability and understanding of complex conditions consider extracting them into well-named functions or variables
 and call those instead.</p>
-
-<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -512,8 +503,6 @@ of this interface to not handle too many things at once.</p>
 
 <p>Large interfaces should be split into smaller interfaces which have a clear responsibility and are easier
 to understand and implement.</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -559,8 +548,6 @@ Each one of them adds one to the complexity count.</p>
 <a href="https://kotlinlang.org/docs/reference/scope-functions.html">Reference</a></li>
 </ul>
 
-<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
-
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options-2">Configuration options:</h4>
@@ -569,7 +556,7 @@ Each one of them adds one to the complexity count.</p>
   <li>
     <p><code class="language-plaintext highlighter-rouge">threshold</code> (default: <code class="language-plaintext highlighter-rouge">15</code>)</p>
 
-    <p>McCabe’s Cyclomatic Complexity (MCC) number for a method.</p>
+    <p>McCabe’s Cyclomatic Complexity (MCC) number for a method</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ignoreSingleWhenExpression</code> (default: <code class="language-plaintext highlighter-rouge">false</code>)</p>
@@ -584,12 +571,13 @@ Each one of them adds one to the complexity count.</p>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ignoreNestingFunctions</code> (default: <code class="language-plaintext highlighter-rouge">false</code>)</p>
 
-    <p>Whether to ignore functions which are often used instead of an <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">for</code> statement.</p>
+    <p>Whether to ignore functions which are often used instead of an <code class="language-plaintext highlighter-rouge">if</code> or
+<code class="language-plaintext highlighter-rouge">for</code> statement</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">nestingFunctions</code> (default: <code class="language-plaintext highlighter-rouge">['run', 'let', 'apply', 'with', 'also', 'use', 'forEach', 'isNotNull', 'ifNull']</code>)</p>
+    <p><code class="language-plaintext highlighter-rouge">nestingFunctions</code> (default: <code class="language-plaintext highlighter-rouge">[run, let, apply, with, also, use, forEach, isNotNull, ifNull]</code>)</p>
 
-    <p>Comma separated list of function names which add complexity.</p>
+    <p>Comma separated list of function names which add complexity</p>
   </li>
 </ul>
 
@@ -599,8 +587,6 @@ Each one of them adds one to the complexity count.</p>
 maintainability of the code. Refactor the violating code to not use labels instead.
 Labeled expressions referencing an outer class with a label from an inner class are allowed, because there is no
 way to get the instance of an outer class from an inner class in Kotlin.</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -658,8 +644,6 @@ the class does instead handle multiple responsibilities. Instead of doing many t
 split up large classes into smaller classes. These smaller classes are then easier to understand and handle less
 things.</p>
 
-<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
-
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options-4">Configuration options:</h4>
@@ -679,8 +663,6 @@ Prefer smaller methods with clear names that describe their functionality clearl
 
 <p>Extract parts of the functionality of long methods into separate, smaller methods.</p>
 
-<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
-
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options-5">Configuration options:</h4>
@@ -696,8 +678,6 @@ Prefer smaller methods with clear names that describe their functionality clearl
 <h3 id="longparameterlist">LongParameterList</h3>
 
 <p>Reports functions and constructors which have more parameters than a certain threshold.</p>
-
-<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -734,7 +714,9 @@ Prefer smaller methods with clear names that describe their functionality clearl
   <li>
     <p><code class="language-plaintext highlighter-rouge">ignoreAnnotated</code> (default: <code class="language-plaintext highlighter-rouge">[]</code>)</p>
 
-    <p>ignore long parameters list for constructors or functions in the context of these annotation class names; (e.g. [‘Inject’, ‘Module’, ‘Suppress’]); the most common case is for dependency injection where constructors are annotated with <code class="language-plaintext highlighter-rouge">@Inject</code>.</p>
+    <p>ignore long parameters list for constructors or functions in the context of these
+annotation class names ; (e.g. [‘Inject’, ‘Module’, ‘Suppress’]);
+the most common case is for dependency injection where constructors are annotated with @Inject.</p>
   </li>
 </ul>
 
@@ -744,8 +726,6 @@ Prefer smaller methods with clear names that describe their functionality clearl
 Method overloading tightly couples these methods together which might make the code harder to understand.</p>
 
 <p>Refactor these methods and try to use optional parameters instead to prevent some of the overloading.</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -762,8 +742,6 @@ Method overloading tightly couples these methods together which might make the c
 <h3 id="namedarguments">NamedArguments</h3>
 
 <p>Reports function invocations which have more parameters than a certain threshold and are all not named.</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Requires Type Resolution</strong></p>
 
@@ -800,8 +778,6 @@ its hidden complexity. It might become harder to understand edge-cases of the fu
 
 <p>Prefer extracting the nested code into well-named functions to make it easier to understand.</p>
 
-<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
-
 <p><strong>Debt</strong>: 20min</p>
 
 <h4 id="configuration-options-9">Configuration options:</h4>
@@ -824,8 +800,6 @@ middle of a safe call chain as that is likely to make the code more difficult to
 
 <p>The rule will check for every opportunity to replace a safe call when it sits at the end of a chain, even if there’s
 only one, as that will still improve code coverage and reduce cyclomatic complexity.</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Requires Type Resolution</strong></p>
 
@@ -854,8 +828,6 @@ only one, as that will still improve code coverage and reduce cyclomatic complex
 codebase makes it harder to change and maintain.</p>
 
 <p>Instead, prefer extracting the String literal into a property or constant.</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Debt</strong>: 5min</p>
 
@@ -913,8 +885,6 @@ Each element can be configured with different thresholds.</p>
 
 <p>Too many functions indicate a violation of the single responsibility principle. Prefer extracting functionality
 which clearly belongs together in separate parts of the code.</p>
-
-<p><strong>Active by default</strong>: Yes - Since v1.0.0</p>
 
 <p><strong>Debt</strong>: 20min</p>
 
@@ -979,7 +949,7 @@ which clearly belongs together in separate parts of the code.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 The detekt Team. All rights reserved. <br />
- Site last generated: May 25, 2021 <br />
+ Site last generated: Jun 1, 2021 <br />
                 </div>
             </div>
 </footer>

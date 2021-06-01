@@ -32,7 +32,7 @@
 <script src="/detekt/js/toc.js"></script>
 <script src="/detekt/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/detekt/images/favicon.svg">
+<link rel="shortcut icon" href="/detekt/images/favicon.ico">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -245,13 +245,6 @@
           
           
           
-          
-          
-          <li><a href="/detekt/compatibility.html">Compatibility Table</a></li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -393,7 +386,7 @@
           
           
           
-          <li><a href="/detekt/pages/kdoc">detekt-api</a></li>
+          <li><a href="/detekt/pages/kdoc/detekt-api/index.html">detekt-api</a></li>
           
           
           
@@ -457,7 +450,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/main/docs/pages/documentation/coroutines.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages/documentation/coroutines.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -481,8 +474,6 @@ of GlobalScope is highly discouraged.</p>
 </blockquote>
 
 <p>See https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-global-scope/</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Debt</strong>: 10min</p>
 
@@ -512,8 +503,6 @@ of GlobalScope is highly discouraged.</p>
 functions. This needlessly restricts use of the function and should be avoided by removing the <code class="language-plaintext highlighter-rouge">suspend</code> modifier
 where it’s not needed.</p>
 
-<p><strong>Active by default</strong>: No</p>
-
 <p><strong>Requires Type Resolution</strong></p>
 
 <p><strong>Debt</strong>: 5min</p>
@@ -521,14 +510,14 @@ where it’s not needed.</p>
 <h4 id="noncompliant-code-1">Noncompliant Code:</h4>
 
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">suspend</span> <span class="k">fun</span> <span class="nf">normalFunction</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"string"</span><span class="p">)</span>
+<span class="nf">println</span><span class="p">(</span><span class="s">"string"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h4 id="compliant-code-1">Compliant Code:</h4>
 
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">normalFunction</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">println</span><span class="p">(</span><span class="s">"string"</span><span class="p">)</span>
+<span class="nf">println</span><span class="p">(</span><span class="s">"string"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -538,8 +527,6 @@ where it’s not needed.</p>
 contain multiple coroutines at one time due to coroutines’ lightweight nature, so if one
 coroutine invokes <code class="language-plaintext highlighter-rouge">Thread.sleep</code>, it could potentially halt the execution of unrelated coroutines
 and cause unpredictable behavior.</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Requires Type Resolution</strong></p>
 
@@ -567,8 +554,6 @@ returns a <code class="language-plaintext highlighter-rouge">Flow</code>, should
 returned <code class="language-plaintext highlighter-rouge">Flow</code>, should work actually be done.</p>
 
 <p>See https://kotlinlang.org/docs/reference/coroutines/flow.html#flows-are-cold</p>
-
-<p><strong>Active by default</strong>: No</p>
 
 <p><strong>Requires Type Resolution</strong></p>
 
@@ -626,7 +611,7 @@ returned <code class="language-plaintext highlighter-rouge">Flow</code>, should 
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 The detekt Team. All rights reserved. <br />
- Site last generated: May 25, 2021 <br />
+ Site last generated: Jun 1, 2021 <br />
                 </div>
             </div>
 </footer>

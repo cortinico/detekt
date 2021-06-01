@@ -32,7 +32,7 @@
 <script src="/detekt/js/toc.js"></script>
 <script src="/detekt/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/detekt/images/favicon.svg">
+<link rel="shortcut icon" href="/detekt/images/favicon.ico">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -245,13 +245,6 @@
           
           
           
-          
-          
-          <li><a href="/detekt/compatibility.html">Compatibility Table</a></li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -393,7 +386,7 @@
           
           
           
-          <li><a href="/detekt/pages/kdoc">detekt-api</a></li>
+          <li><a href="/detekt/pages/kdoc/detekt-api/index.html">detekt-api</a></li>
           
           
           
@@ -457,7 +450,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/main/docs/pages/gettingstarted/gradletask.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages/gettingstarted/gradletask.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -472,7 +465,18 @@ $('#toc').on('click', 'a', function() {
 
 <h6 id="groovy-dsl">Groovy DSL</h6>
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">jcenter</span><span class="o">()</span>
+
+    <span class="c1">// or</span>
+
     <span class="n">mavenCentral</span><span class="o">()</span>
+    <span class="n">jcenter</span> <span class="o">{</span>
+        <span class="n">content</span> <span class="o">{</span>
+            <span class="c1">// just allow to include kotlinx projects</span>
+            <span class="c1">// detekt needs 'kotlinx-html' for the html report</span>
+            <span class="n">includeGroup</span> <span class="s2">"org.jetbrains.kotlinx"</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="n">configurations</span> <span class="o">{</span>
@@ -490,7 +494,7 @@ $('#toc').on('click', 'a', function() {
 <span class="o">}</span>
 
 <span class="n">dependencies</span> <span class="o">{</span>
-	<span class="n">detekt</span> <span class="s1">'io.gitlab.arturbosch.detekt:detekt-cli:1.17.1'</span>
+	<span class="n">detekt</span> <span class="s1">'io.gitlab.arturbosch.detekt:detekt-cli:1.16.0'</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
@@ -514,7 +518,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 The detekt Team. All rights reserved. <br />
- Site last generated: May 25, 2021 <br />
+ Site last generated: Jun 1, 2021 <br />
                 </div>
             </div>
 </footer>

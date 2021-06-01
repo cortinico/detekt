@@ -32,7 +32,7 @@
 <script src="/detekt/js/toc.js"></script>
 <script src="/detekt/js/customscripts.js"></script>
 
-<link rel="shortcut icon" href="/detekt/images/favicon.svg">
+<link rel="shortcut icon" href="/detekt/images/favicon.ico">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -245,13 +245,6 @@
           
           
           
-          
-          
-          <li><a href="/detekt/compatibility.html">Compatibility Table</a></li>
-          
-          
-          
-          
       </ul>
    </li>
      
@@ -393,7 +386,7 @@
           
           
           
-          <li><a href="/detekt/pages/kdoc">detekt-api</a></li>
+          <li><a href="/detekt/pages/kdoc/detekt-api/index.html">detekt-api</a></li>
           
           
           
@@ -457,7 +450,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/detekt/detekt/tree/main/docs/pages//extensions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/detekt/detekt/tree/master/docs/pages//extensions.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
@@ -465,7 +458,7 @@ $('#toc').on('click', 'a', function() {
     
 
   <p>The following page describes how to extend detekt and how to customize it to your domain-specific needs.
-The associated <strong>code samples</strong> to this guide can be found in the package <a href="https://github.com/detekt/detekt/tree/main/detekt-sample-extensions">detekt/detekt-sample-extensions</a>.</p>
+The associated <strong>code samples</strong> to this guide can be found in the package <a href="https://github.com/detekt/detekt/tree/master/detekt-sample-extensions">detekt/detekt-sample-extensions</a>.</p>
 
 <h4 id="custom-rulesets"><a name="customrulesets">Custom RuleSets</a></h4>
 
@@ -653,7 +646,7 @@ If you want to customize the output, take a look at the <code class="language-pl
 into your <code class="language-plaintext highlighter-rouge">detekt</code> run? Great, make sure to have a <code class="language-plaintext highlighter-rouge">jar</code> with all your needed dependencies 
 minus the ones <code class="language-plaintext highlighter-rouge">detekt</code> brings itself.</p>
 
-<p>Take a look at our <a href="https://github.com/detekt/detekt/tree/main/detekt-sample-extensions">sample project</a> on how to achieve this with gradle.</p>
+<p>Take a look at our <a href="https://github.com/detekt/detekt/tree/master/detekt-sample-extensions">sample project</a> on how to achieve this with gradle.</p>
 
 <h5 id="integrate-your-extension-with-the-detekt-cli">Integrate your extension with the detekt CLI</h5>
 
@@ -669,14 +662,14 @@ To enable it, we add the published dependency to <code class="language-plaintext
 
 <h6 id="gradle-kotlingroovy-dsl">Gradle (Kotlin/Groovy DSL)</h6>
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">dependencies</span> <span class="p">{</span>
-    <span class="nf">detektPlugins</span><span class="p">(</span><span class="s">"io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1"</span><span class="p">)</span>
+    <span class="nf">detektPlugins</span><span class="p">(</span><span class="s">"io.gitlab.arturbosch.detekt:detekt-formatting:1.16.0"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h5 id="pitfalls">Pitfalls</h5>
 
 <ul>
-  <li>By default all rules not annotated with <code class="language-plaintext highlighter-rouge">@ActiveByDefault</code> are disabled.
+  <li>By default all rules not marked with <code class="language-plaintext highlighter-rouge">@active</code> in their <code class="language-plaintext highlighter-rouge">KDoc</code> are disabled.
 That means your custom rules are also disabled if you have not explicitly enabled
 them in the <code class="language-plaintext highlighter-rouge">detekt</code> yaml configuration file.</li>
   <li>If your extension is part of your project and you integrate it like <code class="language-plaintext highlighter-rouge">detektPlugins project(":my-rules")</code> make sure that this
@@ -711,7 +704,7 @@ Only write auto correcting code within the <code class="language-plaintext highl
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2021 The detekt Team. All rights reserved. <br />
- Site last generated: May 25, 2021 <br />
+ Site last generated: Jun 1, 2021 <br />
                 </div>
             </div>
 </footer>
