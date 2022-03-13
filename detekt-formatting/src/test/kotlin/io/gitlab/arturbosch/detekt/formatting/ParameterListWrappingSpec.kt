@@ -21,23 +21,16 @@ class ParameterListWrappingSpec {
     inner class `ParameterListWrapping rule` {
 
         @Nested
-        inner class `indent size equals 1` {
+        inner class `invalid parameter wrapping` {
 
             val code = """
-                fun f(
-                 a: Int
-                ) {}
+                class ClassA(paramA: String, paramB: String,
+                    paramC: String)
             """.trimIndent()
 
             @Test
-            fun `reports wrong indent size`() {
-                assertThat(subject.lint(code)).hasSize(1)
-            }
-
-            @Test
-            fun `does not report when using an indentation level config of 1`() {
-                val config = TestConfig("indentSize" to "1")
-                assertThat(ParameterListWrapping(config).lint(code)).isEmpty()
+            fun `reports wrong parameter wrapping`() {
+                assertThat(subject.lint(code)).hasSize(3)
             }
         }
 

@@ -1,8 +1,7 @@
 package io.gitlab.arturbosch.detekt.formatting
 
-import com.pinterest.ktlint.core.Rule.Modifier.Last
-import com.pinterest.ktlint.core.Rule.Modifier.RestrictToRoot
-import com.pinterest.ktlint.core.Rule.Modifier.RestrictToRootLast
+import com.pinterest.ktlint.core.Rule.VisitorModifier.RunAsLateAsPossible
+import com.pinterest.ktlint.core.Rule.VisitorModifier.RunOnRootNodeOnly
 import io.gitlab.arturbosch.detekt.api.Config
 import io.gitlab.arturbosch.detekt.api.MultiRule
 import io.gitlab.arturbosch.detekt.api.Rule
@@ -48,6 +47,7 @@ import io.gitlab.arturbosch.detekt.formatting.wrappers.SpacingBetweenDeclaration
 import io.gitlab.arturbosch.detekt.formatting.wrappers.SpacingBetweenDeclarationsWithComments
 import io.gitlab.arturbosch.detekt.formatting.wrappers.StringTemplate
 import io.gitlab.arturbosch.detekt.formatting.wrappers.TrailingComma
+import io.gitlab.arturbosch.detekt.formatting.wrappers.UnnecessaryParenthesesBeforeTrailingLambda
 import org.jetbrains.kotlin.com.intellij.lang.ASTNode
 import org.jetbrains.kotlin.com.intellij.psi.impl.source.JavaDummyElement
 import org.jetbrains.kotlin.com.intellij.psi.impl.source.JavaDummyHolder
@@ -105,6 +105,7 @@ class KtLintMultiRule(config: Config = Config.empty) : MultiRule() {
         SpacingBetweenDeclarationsWithAnnotations(config),
         SpacingBetweenDeclarationsWithComments(config),
         TrailingComma(config),
+        UnnecessaryParenthesesBeforeTrailingLambda(config),
     )
 
     override fun visit(root: KtFile) {
@@ -121,11 +122,11 @@ class KtLintMultiRule(config: Config = Config.empty) : MultiRule() {
         val runLastOnRoot = mutableListOf<FormattingRule>()
         val runLast = mutableListOf<FormattingRule>()
         for (rule in activeRules.filterIsInstance<FormattingRule>()) {
-            when (rule.wrapping) {
-                is Last -> runLast.add(rule)
-                // RestrictToRootLast implements RestrictToRoot, so we have to perform this check first
-                is RestrictToRootLast -> runLastOnRoot.add(rule)
-                is RestrictToRoot -> runFirstOnRoot.add(rule)
+            val modifiers = rule.wrapping.visitorModifiers
+            when {
+                RunOnRootNodeOnly in modifiers && RunAsLateAsPossible in modifiers -> runLastOnRoot.add(rule)
+                RunAsLateAsPossible in modifiers -> runLast.add(rule)
+                RunOnRootNodeOnly in modifiers -> runFirstOnRoot.add(rule)
                 else -> other.add(rule)
             }
         }
