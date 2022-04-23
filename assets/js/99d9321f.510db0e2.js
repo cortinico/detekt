@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdetekt_website=self.webpackChunkdetekt_website||[]).push([[7652],{8172:function(e){e.exports=JSON.parse('{"allTagsPath":"/detekt/blog/tags","name":"news","count":2,"permalink":"/detekt/blog/tags/news"}')}}]);

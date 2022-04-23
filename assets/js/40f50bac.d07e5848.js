@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdetekt_website=self.webpackChunkdetekt_website||[]).push([[3452],{9690:function(e){e.exports=JSON.parse('{"guides":{"allTagsPath":"/detekt/blog/tags","name":"guides","count":6,"permalink":"/detekt/blog/tags/guides"},"news":{"allTagsPath":"/detekt/blog/tags","name":"news","count":2,"permalink":"/detekt/blog/tags/news"}}')}}]);
